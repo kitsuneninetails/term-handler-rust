@@ -1,8 +1,13 @@
 [package]
 name = "term-handler"
 version = "0.1.0"
-authors = ["Michael Micucci <michael.micucci@exchange.co.jp>"]
+description = "A library to wait for TERM signals (Ctrl-C) with a loop."
+authors = ["Michael Micucci <micucci@fox-den.org>"]
+repository = "http://github.com/kitsuneninetails/term-handler-rust"
+license = "MIT"
+readme = "README.md"
+keywords = ["term", "wait-for-term" ]
 
 [dependencies]
-lazy_static = "*"
-signal = {git="http://git@github.com/kitsuneninetails/signal-rust"}
+lazy_static = "1.2"
+signal-simple = "0.1"

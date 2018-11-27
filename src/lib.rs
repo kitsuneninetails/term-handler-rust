@@ -1,8 +1,8 @@
 #[macro_use] extern crate lazy_static;
-extern crate signal;
+extern crate signal_simple;
 
-use signal::signal::{signal as sig, SIGTERM, SIGINT, int};
-use signal::channel::SyncChannel;
+use signal_simple::signal::{signal as sig, SIGTERM, SIGINT, int};
+use signal_simple::channel::SyncChannel;
 
 lazy_static! {
     static ref TERM_HANDLER_CHANNEL: SyncChannel<()> = SyncChannel::new();
@@ -26,7 +26,7 @@ pub fn wait_for_term() {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use signal::signal::kill;
+    use signal_simple::signal::kill;
 
     #[test]
     fn test_term() {
