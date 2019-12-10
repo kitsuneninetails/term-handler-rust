@@ -16,11 +16,7 @@ pub fn wait_for_term() {
     sig(SIGTERM, term_handler, None);
     sig(SIGINT, term_handler, None);
 
-    loop {
-        if let Ok(Some(_)) = TERM_HANDLER_CHANNEL.try_recv() {
-            break;
-        }
-    }
+    let _ = TERM_HANDLER_CHANNEL.recv();
 }
 
 #[cfg(test)]
